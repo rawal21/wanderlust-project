@@ -34,7 +34,7 @@ console.log(lon,lat);
   let newListing = new Listing(req.body.listing);
   newListing.owner =  req.user._id;
   newListing.image = {url,fileName};
-  newListing.goemetry = {
+  newListing.goemetry   = {
     type: 'Point',
     coordinates: [lon,lat]
 };
@@ -72,7 +72,7 @@ module.exports.edit = async (req, res) => {
   console.log(originalUrl);
   originalUrl =originalUrl.replace("/upload","/upload/h_250,w_300");
   res.render("Lisitings/edit.ejs", { listing , originalUrl });
-}
+} 
 
 module.exports.update = async (req, res) => {
   let { id } = req.params;
